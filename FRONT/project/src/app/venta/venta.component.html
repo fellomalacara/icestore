@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow-lg p-3 mb-5 bg-body rounded .bg-success">
+
+            <div class="card-header">
+                <div class="card-body">
+                    <h4 class="card-title">Tipo de cliente</h4>
+                </div>
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="form-group">
+
+                            <select name="" id="" class="form-control form-select-lg mb-3" [(ngModel)]="venta.cliente">
+                        <option value="">Seleccionar</option>
+                        <option *ngFor ="let cliente of clientes"value="{{cliente._id}}"> 
+                            {{cliente.nombre}} 
+                        </option>      
+                    </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12" style=" margin-top:1% ">
+        <div class="row ">
+            <div class="col-4 ">
+                <div class="card shadow-lg p-3 mb-5 bg-body rounded" style="width: 18rem;">
+                    <div class="card-body">
+                        <div class="form-group form-select-lg ">
+                            <h3 class="text-center"> PRODUCTO!</h3>
+                            <select name=" " id=" " class="form-control" (change)="poner_precio()" [(ngModel)]="venta.producto">
+                        <option value="">Seleccionar</option>
+                       <option *ngFor="let producto of productos"value="{{producto._id}}-{{producto.precio}}-{{producto.nombre}}">
+                           {{producto.nombre}}
+                       </option>
+                    </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for=" ">PRECIO</label>
+                            <input type="text " class="form-control " disabled [(ngModel)]="venta.precio">
+                        </div>
+                        <div class="form-group ">
+                            <label for=" ">CANTIDAD</label>
+                            <input type="text " class="form-control " [(ngModel)]="venta.cantidad">
+                        </div><br><br>
+                        <div class="form-group ">
+                            <button class="btn btn-primary" (click)="agregar()">agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="col-8 ">
+
+                <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="card-body">
+                        <div class="card-header">
+                            <h4 class="text-center">Por cobrar</h4>
+                        </div>
+                        <table class="table ">
+                            <thead>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Sub Total</th>
+                            </thead>
+
+                            <tbody>
+
+                                <tr *ngFor="let pr of venta.productos_detalle; let i = index">
+                                    <td>{{pr.producto_nombre}}</td>
+                                    <td>{{pr.cantidad}}</td>
+                                    <td>{{pr.precio}}</td>
+                                    <td>{{pr.subtotal}}</td>
+                                </tr>
+                            </tbody>
+
+                            <thead>
+                                <tr>
+                                    <th colspan="4"></th>
+                                    <th>Total:{{venta.total}}</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                        <button class="btn btn-success float-right" (click)="guardar()">Cobrar</button>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+
+        </div>
+    </div>
+</div>

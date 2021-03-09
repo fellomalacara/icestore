@@ -1,0 +1,119 @@
+:root {
+    --primary: #365a5a;
+    ;
+    --light: #49330c;
+    --grey: #49330c;
+    --texts-col: #d88c0a;
+}
+
+body {
+    overflow: hidden;
+    font-weight: 800;
+    color: var(--texts-col);
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #FAFAFA;
+}
+
+.bg-primary {
+    background-color: var(--primary)!important;
+}
+
+#sidebar-container {
+    min-height: 100 vh;
+}
+
+.stat {
+    border-right: 1px solid var(--grey);
+}
+
+.opcion {
+    color: #49330c;
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    size: 25px;
+    color: #fafafa;
+}
+
+#sidebar-container .logo {
+    padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu {
+    width: 18rem;
+}
+
+#content {
+    overflow: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+
+.menu {
+    color: var(--texts-col);
+}
+
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #d4d4d4;
+}
+
+tr:nth-child(even) {
+    background: #d4d4d4;
+}
+
+th,
+td {
+    padding: 10px 30px;
+}
+
+th {
+    border-bottom: 1px solid #630a0a;
+}
+
+#principal h1 {
+    font-size: 80px;
+    padding: 40;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+h4 {
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 35px;
+}
+
+button {
+    font-size: 100px;
+    font-family: Verdana, Helvetica;
+    font-weight: bold;
+    color: rgb(158, 32, 32);
+    background: #638cb5;
+    border: 10px;
+    width: 200px;
+    height: 100px;
+}
+
+input {
+    align-items: center;
+    border: gray;
+    background-color: rgb(17, 102, 17);
+}
+
+#headers {
+    background-color: #e61685;
+    color: #fafafa;
+}
+
+#cardsV {
+    background-color: #bae3e3;
+}
+
+#card_login {
+    border-radius: 20%;
+}

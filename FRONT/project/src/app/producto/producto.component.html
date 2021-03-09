@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-4">
+        <div class="form-group">
+            <label for="">Item Storage</label>
+            <input type="text" class="form-control" [(ngModel)]="formProductos.nombre">
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label for="">Precio </label>
+            <input type="text" class="form-control" [(ngModel)]="formProductos.precio">
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label for="">Precio Unitario</label>
+            <input type="text" class="form-control" [(ngModel)]="formProductos.preciounitario">
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label for="">Cantidad</label>
+            <input type="text" class="form-control" [(ngModel)]="formProductos.cantidad">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <div class="form-group">
+            <label for="">Categoria</label>
+            <select name="" id="" class="form-control" [(ngModel)]="formProductos.categoria">
+          <option value="">Seleccione</option>
+          <option value="Granos">Paleta Agua</option>
+          <option value="Paleta Crema">Paleta Crema</option>
+          <option value="Agua Fresca">Agua Fresca</option>
+          <option value="Gourmet">Gourmet</option>
+          
+        </select>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label for="">Imagen</label>
+            <input type="file" class="form-control" (change)="cargarImagen($event)">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <button (click)="guardar()" class="btn btn-succes" type="button">Guardar</button>
+</div>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>precio unitario</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos; let i = index">
+                <td><img width="120px" src="http://localhost:3100/api/producto/imagen/{{producto.imagen}}?token={{token}}" alt=""></td>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.categoria}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.preciounitario}}</td>
+                <td>{{producto.cantidad}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
